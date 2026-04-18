@@ -1,8 +1,8 @@
 ---
 date: '2024-04-01'
-title: 'Restaurant Recommendation System'
+title: 'Zomato Restaurant Recommendation'
 github: 'https://github.com/tanishbajaj101'
-external: 'https://github.com/tanishbajaj101'
+external: 'https://zomatorecommender.streamlit.app/'
 tech:
   - Qdrant
   - Python

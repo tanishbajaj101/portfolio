@@ -71,18 +71,11 @@ const StyledPic = styled.div`
       &:after {
         transform: translate(8px, 8px);
       }
-
-      .img {
-        filter: none;
-        mix-blend-mode: normal;
-      }
     }
 
     .img {
       position: relative;
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
       transition: var(--transition);
     }
 
@@ -100,8 +93,6 @@ const StyledPic = styled.div`
     &:before {
       top: 0;
       left: 0;
-      background-color: var(--navy);
-      mix-blend-mode: screen;
     }
 
     &:after {
@@ -155,7 +146,7 @@ const About = () => {
               <a href="https://dtu.ac.in/" target="_blank" rel="noreferrer">
                 Mathematics &amp; Computing at DTU
               </a>{' '}
-              (CGPA: 8.64), where I&apos;ve interned as an AI Engineer at{' '}
+              where I&apos;ve interned as an AI Engineer at{' '}
               <a href="https://www.nttdata.com/" target="_blank" rel="noreferrer">
                 NTT DATA Business Solutions
               </a>{' '}

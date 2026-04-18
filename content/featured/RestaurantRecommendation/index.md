@@ -1,9 +1,9 @@
 ---
 date: '3'
-title: 'Restaurant Recommendation System'
+title: 'Zomato Restaurant Recommendation'
 cover: './demo.png'
 github: 'https://github.com/tanishbajaj101'
-external: 'https://github.com/tanishbajaj101'
+external: 'https://zomatorecommender.streamlit.app/'
 tech:
   - Qdrant
   - SQLite
