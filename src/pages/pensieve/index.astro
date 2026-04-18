@@ -1,0 +1,18 @@
+---
+import AstroLayout from '../../layouts/Layout.astro';
+import PensievePage from '../../components/pages/PensievePage';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+
+const posts = allPosts
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .map(e => ({
+    ...e.data,
+    slug: `/pensieve/${e.id.replace(/\.(md|mdx)$/, '').replace(/\/index$/, '')}`,
+  }));
+---
+
+<AstroLayout title="Pensieve | Tanish Bajaj">
+  <PensievePage posts={posts} client:only="react" />
+</AstroLayout>

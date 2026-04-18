@@ -1,0 +1,10 @@
+
+import __ASTRO_IMAGE_IMPORT_MA3rq from "./console-errors.png?astroContentImageFlag=&importer=src%2Fcontent%2Fposts%2Fwordpress-publish-error%2Findex.md";
+import __ASTRO_IMAGE_IMPORT_Z2qB93W from "./demo.png?astroContentImageFlag=&importer=src%2Fcontent%2Ffeatured%2FCodeTracer%2Findex.md";
+import __ASTRO_IMAGE_IMPORT_2h3Hw8 from "./demo.png?astroContentImageFlag=&importer=src%2Fcontent%2Ffeatured%2FRestaurantRecommendation%2Findex.md";
+import __ASTRO_IMAGE_IMPORT_2iYVtM from "./demo.png?astroContentImageFlag=&importer=src%2Fcontent%2Ffeatured%2FYTFeed%2Findex.md";
+import __ASTRO_IMAGE_IMPORT_12ktHE from "./draft-fail.png?astroContentImageFlag=&importer=src%2Fcontent%2Fposts%2Fwordpress-publish-error%2Findex.md";
+import __ASTRO_IMAGE_IMPORT_Z1zTlX from "./image.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fposts%2Fmarkdown-playground%2Findex.md";
+import __ASTRO_IMAGE_IMPORT_Z1J5Ghl from "./publish-error.png?astroContentImageFlag=&importer=src%2Fcontent%2Fposts%2Fwordpress-publish-error%2Findex.md";
+export default new Map([["./console-errors.png?astroContentImageFlag=&importer=src%2Fcontent%2Fposts%2Fwordpress-publish-error%2Findex.md", __ASTRO_IMAGE_IMPORT_MA3rq], ["./demo.png?astroContentImageFlag=&importer=src%2Fcontent%2Ffeatured%2FCodeTracer%2Findex.md", __ASTRO_IMAGE_IMPORT_Z2qB93W], ["./demo.png?astroContentImageFlag=&importer=src%2Fcontent%2Ffeatured%2FRestaurantRecommendation%2Findex.md", __ASTRO_IMAGE_IMPORT_2h3Hw8], ["./demo.png?astroContentImageFlag=&importer=src%2Fcontent%2Ffeatured%2FYTFeed%2Findex.md", __ASTRO_IMAGE_IMPORT_2iYVtM], ["./draft-fail.png?astroContentImageFlag=&importer=src%2Fcontent%2Fposts%2Fwordpress-publish-error%2Findex.md", __ASTRO_IMAGE_IMPORT_12ktHE], ["./image.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fposts%2Fmarkdown-playground%2Findex.md", __ASTRO_IMAGE_IMPORT_Z1zTlX], ["./publish-error.png?astroContentImageFlag=&importer=src%2Fcontent%2Fposts%2Fwordpress-publish-error%2Findex.md", __ASTRO_IMAGE_IMPORT_Z1J5Ghl]]);
+		

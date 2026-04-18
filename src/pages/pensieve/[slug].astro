@@ -1,0 +1,29 @@
+---
+import AstroLayout from '../../layouts/Layout.astro';
+import PostPage from '../../components/pages/PostPage';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+
+  return allPosts.map(post => {
+    const urlSlug = post.id.replace(/\.(md|mdx)$/, '').replace(/\/index$/, '');
+    return {
+      params: { slug: urlSlug },
+      props: {
+        post: {
+          ...post.data,
+          body: post.body,
+          slug: `/pensieve/${urlSlug}`,
+        },
+      },
+    };
+  });
+}
+
+const { post } = Astro.props;
+---
+
+<AstroLayout title={`${post.title} | Tanish Bajaj`} description={post.description}>
+  <PostPage post={post} pathname={post.slug} client:only="react" />
+</AstroLayout>

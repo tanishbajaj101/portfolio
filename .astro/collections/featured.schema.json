@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "cover": {
+      "type": "string"
+    },
+    "github": {
+      "default": "",
+      "type": "string"
+    },
+    "external": {
+      "default": "",
+      "type": "string"
+    },
+    "cta": {
+      "default": "",
+      "type": "string"
+    },
+    "tech": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "date",
+    "title",
+    "cover"
+  ]
+}

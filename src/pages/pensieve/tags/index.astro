@@ -1,0 +1,23 @@
+---
+import AstroLayout from '../../../layouts/Layout.astro';
+import TagsPage from '../../../components/pages/TagsPage';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+
+const tagCounts: Record<string, number> = {};
+for (const post of allPosts) {
+  for (const tag of post.data.tags) {
+    tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+  }
+}
+
+const tags = Object.entries(tagCounts).map(([fieldValue, totalCount]) => ({
+  fieldValue,
+  totalCount,
+}));
+---
+
+<AstroLayout title="Tags | Tanish Bajaj">
+  <TagsPage tags={tags} client:only="react" />
+</AstroLayout>

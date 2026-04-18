@@ -1,0 +1,60 @@
+---
+import { email } from '../config';
+---
+
+<div class="side-element">
+  <div class="link-wrapper">
+    <a href={`mailto:${email}`}>{email}</a>
+  </div>
+</div>
+
+<style>
+  .side-element {
+    width: 40px;
+    position: fixed;
+    bottom: 0;
+    right: 40px;
+    z-index: 10;
+    color: var(--light-slate);
+  }
+  @media (max-width: 1080px) {
+    .side-element {
+      right: 20px;
+    }
+  }
+  @media (max-width: 768px) {
+    .side-element {
+      display: none;
+    }
+  }
+
+  .link-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .link-wrapper::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 90px;
+    margin: 0 auto;
+    background-color: var(--light-slate);
+  }
+  .link-wrapper a {
+    margin: 20px auto;
+    padding: 10px;
+    font-family: var(--font-mono);
+    font-size: var(--fz-xxs);
+    line-height: var(--fz-lg);
+    letter-spacing: 0.1em;
+    writing-mode: vertical-rl;
+    transition: var(--transition);
+  }
+  .link-wrapper a:hover,
+  .link-wrapper a:focus {
+    color: var(--green);
+    transform: translateY(-3px);
+  }
+</style>

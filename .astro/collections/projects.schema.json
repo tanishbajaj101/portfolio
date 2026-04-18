@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "date": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        }
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "github": {
+      "default": "",
+      "type": "string"
+    },
+    "external": {
+      "default": "",
+      "type": "string"
+    },
+    "tech": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "company": {
+      "default": "",
+      "type": "string"
+    },
+    "ios": {
+      "default": "",
+      "type": "string"
+    },
+    "android": {
+      "default": "",
+      "type": "string"
+    },
+    "showInProjects": {
+      "default": true,
+      "type": "boolean"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "date",
+    "title"
+  ]
+}

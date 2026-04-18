@@ -1,0 +1,169 @@
+---
+import meImage from '../../images/me.jpg';
+
+const skills = [
+  'Python',
+  'React',
+  'Node.js',
+  'LangChain',
+  'PyTorch',
+  'Docker',
+  'Flutter',
+  'PostgreSQL',
+];
+---
+
+<section id="about" class="about-section">
+  <h2 class="numbered-heading">About Me</h2>
+
+  <div class="inner">
+    <div class="about-text">
+      <div>
+        <p>
+          Hello! My name is Tanish and I love building things &mdash; from LLM-powered data
+          pipelines to full-stack apps and competitive programming solutions. My journey into
+          software started with a fascination for algorithms, and it quickly evolved into a passion
+          for AI, machine learning, and intelligent systems.
+        </p>
+
+        <p>
+          I&apos;m currently a final-year B.Tech student in          <a href="https://dtu.ac.in/" target="_blank" rel="noreferrer">
+            Mathematics &amp; Computing at DTU
+          </a>          where I&apos;ve interned as an AI Engineer at          <a href="https://www.nttdata.com/" target="_blank" rel="noreferrer">
+            NTT DATA Business Solutions
+          </a>          and as an ML Engineer at          <a href="https://biup.ai/" target="_blank" rel="noreferrer">
+            BiUP.ai
+          </a>
+          , building production systems used by 25,000+ users monthly.
+        </p>
+
+        <p>
+          I&apos;m also a          <a href="https://linktr.ee/geekroom" target="_blank" rel="noreferrer">
+            Core Member at Geek Room
+          </a>
+          , a community of 100,000+ coders, where I help organise hackathons, hireathons, and
+          workshops. Outside of work, I&apos;m a competitive programmer with 1600+ rating and 400+
+          problems solved across LeetCode, Codeforces, and CSES.
+        </p>
+
+        <p>Here are a few technologies I&apos;ve been working with recently:</p>
+      </div>
+
+      <ul class="skills-list">
+        {skills.map(skill => <li>{skill}</li>)}
+      </ul>
+    </div>
+
+    <div class="about-pic">
+      <div class="wrapper">
+        <img class="img" src={meImage.src ?? meImage} width={500} alt="Headshot" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import sr from '../../utils/sr';
+  import { srConfig } from '../../config';
+
+  if (sr) {
+    const el = document.getElementById('about');
+    if (el) sr.reveal(el, srConfig());
+  }
+</script>
+
+<style>
+  .about-section {
+    max-width: 900px;
+  }
+
+  .inner {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 50px;
+  }
+  @media (max-width: 768px) {
+    .inner {
+      display: block;
+    }
+  }
+
+  .skills-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px, 200px));
+    grid-gap: 0 10px;
+    padding: 0;
+    margin: 20px 0 0 0;
+    overflow: hidden;
+    list-style: none;
+  }
+  .skills-list li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+  }
+  .skills-list li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-size: var(--fz-sm);
+    line-height: 12px;
+  }
+
+  .about-pic {
+    position: relative;
+    max-width: 300px;
+  }
+  @media (max-width: 768px) {
+    .about-pic {
+      margin: 50px auto 0;
+      width: 70%;
+    }
+  }
+
+  .wrapper {
+    box-shadow: 0 10px 30px -15px var(--navy-shadow);
+    transition: var(--transition);
+    display: block;
+    position: relative;
+    width: 100%;
+    border-radius: var(--border-radius);
+  }
+  .wrapper:hover,
+  .wrapper:focus {
+    outline: 0;
+    transform: translate(-4px, -4px);
+    box-shadow: 0 20px 30px -15px var(--navy-shadow);
+  }
+  .wrapper:hover::after,
+  .wrapper:focus::after {
+    transform: translate(8px, 8px);
+  }
+  .wrapper::before,
+  .wrapper::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+  }
+  .wrapper::after {
+    border: 2px solid var(--green);
+    top: 14px;
+    left: 14px;
+    z-index: -1;
+  }
+
+  .img {
+    position: relative;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    width: 100%;
+    height: auto;
+  }
+</style>

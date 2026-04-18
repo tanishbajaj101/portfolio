@@ -1,0 +1,122 @@
+---
+---
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Hi, my name is</h1>
+    <h2 class="big-heading">Tanish Bajaj.</h2>
+    <h3>I build intelligent systems.</h3>
+    <p>
+      I'm a software engineer and AI/ML enthusiast specializing in LLM-powered pipelines,
+      full-stack development, and competitive programming. Currently pursuing B.Tech in
+      Mathematics &amp; Computing at      <a href="https://dtu.ac.in/" target="_blank" rel="noreferrer">
+        Delhi Technological University
+      </a>
+      (graduating 2026).
+    </p>
+    <a class="email-link" href="/resume.pdf" target="_blank" rel="noreferrer">
+      View My Resume
+    </a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0;
+  }
+  @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
+    .hero {
+      height: auto;
+      padding-top: var(--nav-height);
+    }
+  }
+
+  .hero-inner > * {
+    opacity: 0;
+    animation: fadeup 0.5s var(--easing) forwards;
+  }
+  .hero-inner > *:nth-child(1) { animation-delay: 100ms; }
+  .hero-inner > *:nth-child(2) { animation-delay: 200ms; }
+  .hero-inner > *:nth-child(3) { animation-delay: 300ms; }
+  .hero-inner > *:nth-child(4) { animation-delay: 400ms; }
+  .hero-inner > *:nth-child(5) { animation-delay: 500ms; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-inner > * {
+      animation: none;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeup {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  h1 {
+    margin: 0 0 30px 4px;
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
+    font-weight: 400;
+  }
+  @media (max-width: 480px) {
+    h1 {
+      margin: 0 0 20px 2px;
+    }
+  }
+
+  h3 {
+    margin-top: 10px;
+    line-height: 1.1;
+    font-size: clamp(22px, 4vw, 42px);
+    font-weight: 600;
+    font-style: italic;
+    background: linear-gradient(90deg, var(--green), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  p {
+    margin: 20px 0 0;
+    max-width: 540px;
+  }
+
+  .email-link {
+    display: inline-block;
+    color: var(--green);
+    background-color: transparent;
+    border: 1px solid var(--green);
+    border-radius: var(--border-radius);
+    padding: 1.25rem 1.75rem;
+    font-size: var(--fz-sm);
+    font-family: var(--font-mono);
+    line-height: 1;
+    text-decoration: none;
+    transition: var(--transition);
+    margin-top: 50px;
+  }
+  .email-link::after {
+    display: none !important;
+  }
+  .email-link:hover,
+  .email-link:focus-visible {
+    outline: none;
+    box-shadow: 4px 4px 0 0 var(--green);
+    transform: translate(-5px, -5px);
+    color: var(--green);
+  }
+</style>
