@@ -1,0 +1,165 @@
+import { q as o, P as w, j as e, L as j, t as S } from './GlobalStyle.Bb7mjjE7.js';
+import { r as s } from './index.B8NUFlbB.js';
+import { s as _ } from './config.8JBl_d4u.js';
+import { s as T } from './sr.BrDI4Z8O.js';
+import { u as C, C as N, M as E } from './index.DF2av5RA.js';
+const K = 1e3,
+  x = {
+    ARROW_UP: 'ArrowUp',
+    ARROW_DOWN: 'ArrowDown',
+    ESCAPE: 'Escape',
+    ESCAPE_IE11: 'Esc',
+    TAB: 'Tab',
+  },
+  R = o.section.withConfig({ displayName: 'jobs__StyledJobsSection', componentId: 'sc-1rvqy9l-0' })(
+    [
+      'max-width:700px;.inner{display:flex;@media (max-width:600px){display:block;}@media (min-width:700px){min-height:340px;}}',
+    ],
+  ),
+  k = o.div.withConfig({ displayName: 'jobs__StyledTabList', componentId: 'sc-1rvqy9l-1' })([
+    'position:relative;z-index:3;width:max-content;padding:0;margin:0;list-style:none;@media (max-width:600px){display:flex;overflow-x:auto;width:calc(100% + 100px);padding-left:50px;margin-left:-50px;margin-bottom:30px;}@media (max-width:480px){width:calc(100% + 50px);padding-left:25px;margin-left:-25px;}li{&:first-of-type{@media (max-width:600px){margin-left:50px;}@media (max-width:480px){margin-left:25px;}}&:last-of-type{@media (max-width:600px){padding-right:50px;}@media (max-width:480px){padding-right:25px;}}}',
+  ]),
+  I = o.button.withConfig({ displayName: 'jobs__StyledTabButton', componentId: 'sc-1rvqy9l-2' })(
+    [
+      '',
+      ';display:flex;align-items:center;width:100%;height:var(--tab-height);padding:0 20px 2px;border-left:2px solid var(--lightest-navy);background-color:transparent;color:',
+      ';font-family:var(--font-mono);font-size:var(--fz-xs);text-align:left;white-space:nowrap;@media (max-width:768px){padding:0 15px 2px;}@media (max-width:600px){',
+      ';min-width:120px;padding:0 15px;border-left:0;border-bottom:2px solid var(--lightest-navy);text-align:center;}&:hover,&:focus{background-color:var(--light-navy);}',
+    ],
+    ({ theme: t }) => t.mixins.link,
+    ({ isActive: t }) => (t ? 'var(--green)' : 'var(--slate)'),
+    ({ theme: t }) => t.mixins.flexCenter,
+  ),
+  A = o.div.withConfig({ displayName: 'jobs__StyledHighlight', componentId: 'sc-1rvqy9l-3' })(
+    [
+      'position:absolute;top:0;left:0;z-index:10;width:2px;height:var(--tab-height);border-radius:var(--border-radius);background:var(--green);transform:translateY(calc(',
+      ' * var(--tab-height)));transition:transform 0.25s cubic-bezier(0.645,0.045,0.355,1);transition-delay:0.1s;@media (max-width:600px){top:auto;bottom:0;width:100%;max-width:var(--tab-width);height:2px;margin-left:50px;transform:translateX(calc(',
+      ' * var(--tab-width)));}@media (max-width:480px){margin-left:25px;}',
+    ],
+    ({ activeTabId: t }) => t,
+    ({ activeTabId: t }) => t,
+  ),
+  P = o.div.withConfig({ displayName: 'jobs__StyledTabPanels', componentId: 'sc-1rvqy9l-4' })([
+    'position:relative;width:100%;margin-left:20px;@media (max-width:600px){margin-left:0;}',
+  ]),
+  z = o.div.withConfig({ displayName: 'jobs__StyledTabPanel', componentId: 'sc-1rvqy9l-5' })(
+    [
+      'width:100%;height:auto;padding:10px 5px;ul{',
+      ';}h3{margin-bottom:2px;font-size:var(--fz-xxl);font-weight:500;line-height:1.3;.company{color:var(--green);}}.range{margin-bottom:25px;color:var(--light-slate);font-family:var(--font-mono);font-size:var(--fz-xs);}',
+    ],
+    ({ theme: t }) => t.mixins.fancyList,
+  ),
+  D = ({ jobs: t = [] }) => {
+    const [n, h] = s.useState(0),
+      [r, l] = s.useState(null),
+      d = s.useRef([]),
+      m = s.useRef(null),
+      f = C();
+    s.useEffect(() => {
+      f || T.reveal(m.current, _());
+    }, []);
+    const g = () => {
+      if (d.current[r]) {
+        d.current[r].focus();
+        return;
+      }
+      (r >= d.current.length && l(0), r < 0 && l(d.current.length - 1));
+    };
+    s.useEffect(() => g(), [r]);
+    const b = i => {
+      switch (i.key) {
+        case x.ARROW_UP: {
+          (i.preventDefault(), l(r - 1));
+          break;
+        }
+        case x.ARROW_DOWN: {
+          (i.preventDefault(), l(r + 1));
+          break;
+        }
+      }
+    };
+    return e.jsx(j, {
+      theme: S,
+      children: e.jsxs(R, {
+        id: 'jobs',
+        ref: m,
+        children: [
+          e.jsx('h2', { className: 'numbered-heading', children: "Where I've Worked" }),
+          e.jsxs('div', {
+            className: 'inner',
+            children: [
+              e.jsxs(k, {
+                role: 'tablist',
+                'aria-label': 'Job tabs',
+                onKeyDown: i => b(i),
+                children: [
+                  t &&
+                    t.map((i, a) => {
+                      const { company: c } = i;
+                      return e.jsx(
+                        I,
+                        {
+                          isActive: n === a,
+                          onClick: () => h(a),
+                          ref: p => (d.current[a] = p),
+                          id: `tab-${a}`,
+                          role: 'tab',
+                          tabIndex: n === a ? '0' : '-1',
+                          'aria-selected': n === a,
+                          'aria-controls': `panel-${a}`,
+                          children: e.jsx('span', { children: c }),
+                        },
+                        a,
+                      );
+                    }),
+                  e.jsx(A, { activeTabId: n }),
+                ],
+              }),
+              e.jsx(P, {
+                children:
+                  t &&
+                  t.map((i, a) => {
+                    const { title: c, url: p, company: y, range: u, body: v } = i;
+                    return e.jsx(
+                      N,
+                      {
+                        in: n === a,
+                        timeout: 250,
+                        classNames: 'fade',
+                        children: e.jsxs(z, {
+                          id: `panel-${a}`,
+                          role: 'tabpanel',
+                          tabIndex: n === a ? '0' : '-1',
+                          'aria-labelledby': `tab-${a}`,
+                          'aria-hidden': n !== a,
+                          hidden: n !== a,
+                          children: [
+                            e.jsxs('h3', {
+                              children: [
+                                e.jsx('span', { children: c }),
+                                e.jsxs('span', {
+                                  className: 'company',
+                                  children: [
+                                    ' @ ',
+                                    e.jsx('a', { href: p, className: 'inline-link', children: y }),
+                                  ],
+                                }),
+                              ],
+                            }),
+                            e.jsx('p', { className: 'range', children: u }),
+                            e.jsx(E, { children: v }),
+                          ],
+                        }),
+                      },
+                      a,
+                    );
+                  }),
+              }),
+            ],
+          }),
+        ],
+      }),
+    });
+  };
+D.propTypes = { jobs: w.array };
+export { D as J, x as K, K as n };

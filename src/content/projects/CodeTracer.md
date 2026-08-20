@@ -1,14 +1,15 @@
 ---
-date: '2024-06-01'
+date: '2026-08-01'
 title: 'CodeTracer'
-github: 'https://github.com/tanishbajaj101'
-external: 'https://github.com/tanishbajaj101'
+github: 'https://github.com/tanishbajaj101/codetracer'
+external: 'https://codetracer.up.railway.app/'
 tech:
   - React
   - Socket.IO
+  - LangChain
   - Judge0
   - Node.js
 showInProjects: false
 ---
 
-Production-grade LeetCode alternative with real-time contest system, AI coaching, and algorithm visualizations.
+Agent-driven DSA visualizations with a fullstack coding platform: real-time contests, live leaderboards, a full social layer, and an AI coaching agent that renders algorithm visualizations on the fly.
